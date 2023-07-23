@@ -6,10 +6,8 @@ import { FaEye } from 'react-icons/fa';
 import { motion } from "framer-motion"
 import { AuthContext } from '../Provider/AuthProvider';
 
-
 const Login = () => {
-
-
+    
     const navigate = useNavigate();
     const location = useLocation();
     const redirectTo = location?.state?.from?.pathname || "/";
