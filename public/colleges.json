@@ -1,13 +1,32 @@
 [
   {
-    "Image1": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQc416XyivLasR_RaycuBHXVVXhlTFxGBuWpw&usqp=CAU",
-    "image2": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ0vorfKWU7V10glUZcDljxtoAJ_YhOeoylyw&usqp=CAU",
-    "image3": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQccwHGiBL9cEDh1FI7srdvMdOPNuVHx4NfCQ&usqp=CAU",
-    "image4": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS5D8V1qAhXViCq7Lgoh8u0ElNifpeESgLiXg&usqp=CAU",
-    "image5": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTh1F_G2VtA2T8uWi4nB-XK1l9zMHDJQ8Fiyg&usqp=CAU",
-    "image6": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTnWYSmnoMhyY6QukdsPlp9n6RgVrzCqEXhSw&usqp=CAU",
-    "image7": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTbWIh7CQ1mc28xKw3iYLZ1hBtRUBYlbl-2WQ&usqp=CAU",
-    "image8": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-ImCurSBdTWAELm9_Y3kOBcEzms6_hkzP3Q&usqp=CAU",
-    "image9": "https: //encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQsCQXSMHml3popUSjUCH71BkasFizFkZd6wuPhmNYp_n81IJCMbfiY-XEVh5gb0ZK44AQ&usqp=CAU"
+    "username": "Tonmoy",
+    "rating": 4.5,
+    "review_date": "2023-06-15",
+    "review_text": "I had an amazing experience at Notre Dame College. The professors were knowledgeable and supportive, and the campus had a great atmosphere. The extracurricular activities were also diverse and engaging. My only complaint is that the cafeteria food could use some improvement."
+  },
+  {
+    "username": "Eshan",
+    "rating": 5.0,
+    "review_date": "2023-05-30",
+    "review_text": "I cannot say enough good things about Dhaka College, Dhaka! The academics are top-notch, and I felt challenged in the best possible way. The career services helped me secure a fantastic internship, which eventually led to a job offer. The friendships I made here will last a lifetime. Proud to be an ABC alumnus!"
+  },
+  {
+    "username": "Shadhin",
+    "rating": 3.8,
+    "review_date": "2023-04-02",
+    "review_text": "Overall, my experience at Dhaka Commerce College was positive. The campus is beautiful, and some of the professors are excellent. However, I felt that the class sizes were too large in some cases, making it challenging to get personalized attention. It would be great to see smaller class options in the future."
+  },
+  {
+    "username": "Ayon",
+    "rating": 4.7,
+    "review_date": "2023-03-18",
+    "review_text": "Adamjee Cantonment Public School & Collegeis a great place for science enthusiasts like me. The research opportunities are abundant, and the labs are well-equipped. The faculty members are approachable and passionate about their subjects. The only downside is the lack of funding for some research projects."
+  },
+  {
+    "username": "Shazzad",
+    "rating": 4.2,
+    "review_date": "2023-02-10",
+    "review_text": "As an art major, I enjoyed the creative Rajuk Uttara Model College offered. The art facilities are impressive, and the professors encouraged me to explore various techniques. However, I believe there could be more collaboration between different departments to enhance interdisciplinary projects."
   }
 ]
