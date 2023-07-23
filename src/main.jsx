@@ -15,6 +15,7 @@ import {
   QueryClient,
   QueryClientProvider,
 } from '@tanstack/react-query'
+import CollegeDetails from './components/Home/LoadColleges/CollegeDetails.jsx';
 
 const queryClient = new QueryClient()
 
@@ -27,6 +28,11 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home></Home>,
+      },
+      {
+        path: "/collegeDetails/:id",
+        element: <CollegeDetails></CollegeDetails>,
+        loader: ({ params }) => fetch(`http://localhost:5000/colleges/${params.id}`)
       },
     ],
   },
