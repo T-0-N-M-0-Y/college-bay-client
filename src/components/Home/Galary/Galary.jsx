@@ -7,7 +7,7 @@ const Galary = () => {
     return (
         <div>
             <h1 className='md:text-4xl text-2xl uppercase font-bold py-20 text-sky-950 text-center'>Memories</h1>
-            <div className="grid grid-cols-4 gap-1 px-20">
+            <div className="grid md:grid-cols-4 gap-1 px-5 md:px-20">
                 {
                     images.map(image =>
                         <div key={image._id} className="">

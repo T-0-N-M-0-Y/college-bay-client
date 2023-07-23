@@ -7,7 +7,7 @@ import { motion } from "framer-motion"
 import { AuthContext } from '../Provider/AuthProvider';
 
 const Login = () => {
-    
+
     const navigate = useNavigate();
     const location = useLocation();
     const redirectTo = location?.state?.from?.pathname || "/";
@@ -41,8 +41,8 @@ const Login = () => {
     }
 
     return (
-        <div className='h-full mt-14'>
-            <div className='py-24 px-10 md:w-1/2 mx-auto border-2 rounded-2xl shadow-2xl'>
+        <div className='md:h-full md:mt-14'>
+            <div className='py-24 md:px-10 md:w-1/2 mx-auto md:border-2 rounded-2xl md:shadow-2xl'>
                 <form onSubmit={handleSubmit(onSubmit)} className="card-body">
                     <h1 className='text-2xl font-bold text-center uppercase'>Login Now!</h1>
                     <div className="form-control">

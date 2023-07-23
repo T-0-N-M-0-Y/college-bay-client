@@ -9,11 +9,11 @@ const CollegeDetails = () => {
 
     return (
         <div>
-            <div className="card p-20 text-center">
-                <figure><img className="w-1/2 h-96" src={image_url} alt="Movie" /></figure>
+            <div className="card md:p-20 md:text-center">
+                <figure><img className="md:w-1/2 h-96" src={image_url} alt="Movie" /></figure>
                 <div className="card-body">
-                    <h2 className="text-5xl font-bold text-sky-950 text-center">{college_name}</h2>
-                    <p className="text-2xl font-semibold">Addmission: {admission_start_date} to {admission_end_date}</p>
+                    <h2 className="md:text-5xl text-2xl font-bold text-sky-950 text-center">{college_name}</h2>
+                    <p className="md:text-2xl font-semibold">Addmission: {admission_start_date} to {admission_end_date}</p>
                     <p className="font-semibold">Requirements: {admission_requirements}</p>
                     <h1 className="text-xl font-bold underline">Events: </h1>
                     <p className="text-orange-500">{event_name} in {event_date} !!!</p>

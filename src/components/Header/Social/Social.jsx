@@ -52,7 +52,7 @@ const Social = () => {
 
     return (
         <div>
-            <div className="flex justify-between items-center bg-sky-950 text-white px-20">
+            <div className="flex justify-between items-center bg-sky-950 text-white md:px-20">
                 {
                     user ?
                         <>
@@ -77,7 +77,7 @@ const Social = () => {
                     {
                         user ?
                             <>
-                                <Link><button className="bg-sky-800 hover:text-white text-white px-3 py-1 " onClick={handleSignOut}>Logout</button></Link>
+                                <Link><button className="bg-sky-800 hover:text-white text-white px-3 py-1" onClick={handleSignOut}>Logout</button></Link>
                             </>
                             :
                             <>
@@ -88,7 +88,7 @@ const Social = () => {
                         user ?
                             <>
                                 <div className="tooltip tooltip-bottom" data-tip={user.displayName}>
-                                    <img className="w-5 h-5 lg:h-10 lg:w-10 rounded-full" src={user.photoURL} referrerPolicy="no-referrer" />
+                                    <img className="w-8 h-8 lg:h-10 lg:w-10 rounded-full" src={user.photoURL} referrerPolicy="no-referrer" />
                                 </div>
                             </>
                             :

@@ -50,7 +50,7 @@ const Signup = () => {
 
     return (
         <div className="h-screen">
-            <div className='py-24 md:w-1/2 h-screen mx-auto border-2 shadow-2xl'>
+            <div className='py-24 md:w-1/2 md:h-screen mx-auto border-2 shadow-2xl'>
                 <h1 className='text-2xl font-bold text-center uppercase'>Create an Account</h1>
                 <h1 className='text-sm mt-2 text-center'>Not have an account? Create your account. Its take less then a minutes</h1>
                 <form onSubmit={handleSubmit(onSubmit)} className="card-body">
