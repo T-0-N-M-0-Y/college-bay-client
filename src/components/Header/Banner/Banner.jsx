@@ -11,7 +11,7 @@ const Banner = () => {
                         <p className="md:text-5xl text-xs md:font-bold text-white p-2 md:p-5 uppercase text-center">Wellcome to College <br />
                             <p className="text-sm my-4 font-normal normal-case">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form</p>
                             <div className="text-center">
-                                <Link to={'/'}><button className="hover:bg-orange-800 bg-orange-500 hover:text-white border-none mt-2 p-3 text-xs md:text-sm rounded-lg md:w-32 mr-2">ADDMISSION</button></Link>
+                                <Link to={'/'}><button className="hover:bg-white bg-orange-500 hover:text-black border-none mt-2 p-3 text-xs md:text-sm rounded-lg md:w-32 mr-2">ADDMISSION</button></Link>
                                 <Link to={'/'}><button className="hover:bg-white border hover:text-black mt-2 p-3 text-xs md:text-sm rounded-lg md:w-32">Read More</button></Link>
                             </div>
                         </p>
@@ -26,7 +26,7 @@ const Banner = () => {
                         <p className="md:text-5xl text-xs md:font-bold text-white p-2 md:p-5 uppercase text-center">Admission open<br />
                             <p className="text-sm my-4 font-normal normal-case">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form</p>
                             <div className="text-center">
-                                <Link to={'/'}><button className="hover:bg-orange-800 bg-orange-500 hover:text-white border-none mt-2 p-3 text-xs md:text-sm rounded-lg md:w-32 mr-2">ADDMISSION</button></Link>
+                                <Link to={'/'}><button className="hover:bg-white bg-orange-500 hover:text-black border-none mt-2 p-3 text-xs md:text-sm rounded-lg md:w-32 mr-2">ADDMISSION</button></Link>
                                 <Link to={'/'}><button className="hover:bg-white border hover:text-black mt-2 p-3 text-xs md:text-sm rounded-lg md:w-32">Read More</button></Link>
                             </div>
                         </p>
@@ -40,7 +40,7 @@ const Banner = () => {
                         <p className="md:text-5xl text-xs md:font-bold text-white p-2 md:p-5 uppercase text-center">College bay <br />
                             <p className="text-sm my-4 font-normal normal-case">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form</p>
                             <div className="text-center">
-                                <Link to={'/'}><button className="hover:bg-orange-800 bg-orange-500 hover:text-white border-none mt-2 p-3 text-xs md:text-sm rounded-lg md:w-32 mr-2">ADDMISSION</button></Link>
+                                <Link to={'/'}><button className="hover:bg-white bg-orange-500 hover:text-black border-none mt-2 p-3 text-xs md:text-sm rounded-lg md:w-32 mr-2">ADDMISSION</button></Link>
                                 <Link to={'/'}><button className="hover:bg-white border hover:text-black mt-2 p-3 text-xs md:text-sm rounded-lg md:w-32">Read More</button></Link>
                             </div>
                         </p>
@@ -52,9 +52,9 @@ const Banner = () => {
                     <div className="absolute flex justify-between items-center transform -translate-y-1/2 left-5 right-5 top-1/2">
                         <a href="#slide3" className="btn btn-circle hover:bg-orange-800 bg-orange-500 hover:text-white border-none w-4 h-4">❮</a>
                         <p className="md:text-5xl text-xs md:font-bold text-white p-2 md:p-5 uppercase text-center">Select your Best College <br />
-                        <p className="text-sm my-4 font-normal normal-case">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form</p>
+                            <p className="text-sm my-4 font-normal normal-case">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form</p>
                             <div className="text-center">
-                                <Link to={'/'}><button className="hover:bg-orange-800 bg-orange-500 hover:text-white border-none mt-2 p-3 text-xs md:text-sm rounded-lg md:w-32 mr-2">ADDMISSION</button></Link>
+                                <Link to={'/'}><button className="hover:bg-white bg-orange-500 hover:text-black border-none mt-2 p-3 text-xs md:text-sm rounded-lg md:w-32 mr-2">ADDMISSION</button></Link>
                                 <Link to={'/'}><button className="hover:bg-white border hover:text-black mt-2 p-3 text-xs md:text-sm rounded-lg md:w-32">Read More</button></Link>
                             </div>
                         </p>

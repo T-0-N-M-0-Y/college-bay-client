@@ -2,13 +2,15 @@ import { useForm } from "react-hook-form";
 import { motion } from "framer-motion"
 import { useContext } from "react";
 import { AuthContext } from "../Provider/AuthProvider";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Signup = () => {
 
-    const { createUserForEmailPassLogin } = useContext(AuthContext);
+    const { createUserForEmailPassLogin, updateUserProfile, logOut } = useContext(AuthContext);
 
-    const { register, handleSubmit, formState: { errors } } = useForm();
+    const { register, handleSubmit, reset, formState: { errors } } = useForm();
+
+    const navigate = useNavigate();
 
     const onSubmit = data => {
         console.log(data);
@@ -18,30 +20,30 @@ const Signup = () => {
                 const loggedUser = result.user;
                 console.log(loggedUser);
 
-                // updateUserProfile(data.name, data.photo)
-                //     .then(() => {
+                updateUserProfile(data.name, data.photo)
+                    .then(() => {
 
-                //         const userSaved = { name: data.name, email: data.email }
+                        const userSaved = { name: data.name, email: data.email }
 
-                //         fetch('https://assignment-12-sports-academies-server-site-t-0-n-m-0-y.vercel.app/users', {
-                //             method: 'POST',
-                //             headers: {
-                //                 'content-type': 'application/json'
-                //             },
-                //             body: JSON.stringify(userSaved)
-                //         })
-                //             .then(res => res.json())
-                //             .then(data => {
-                //                 if (data.insertedId) {
-                //                     reset();
-                //                 }
-                //             })
-                //         logOut()
-                //             .then(() => { })
-                //             .catch(error => console.log(error))
-                //         navigate('/login')
-                //     })
-                //     .catch(error => console.log(error))
+                        fetch('http://localhost:5000/users', {
+                            method: 'POST',
+                            headers: {
+                                'content-type': 'application/json'
+                            },
+                            body: JSON.stringify(userSaved)
+                        })
+                            .then(res => res.json())
+                            .then(data => {
+                                if (data.insertedId) {
+                                    reset();
+                                }
+                            })
+                        logOut()
+                            .then(() => { })
+                            .catch(error => console.log(error))
+                        navigate('/login')
+                    })
+                    .catch(error => console.log(error))
             })
             .catch(error => console.log(error))
     }
@@ -56,7 +58,7 @@ const Signup = () => {
                         <label className="label">
                             <span className="label-text">Name</span>
                         </label>
-                        <input placeholder="Name" className="input input-bordered" />
+                        <input type="text" {...register("name", { required: true })} placeholder="Name" className="input input-bordered" />
                         {errors.name && <span className="text-red-500">Name is required</span>}
                     </div>
                     <div className="form-control">

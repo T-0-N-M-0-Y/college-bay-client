@@ -29,18 +29,18 @@ const Social = () => {
                     navigate(redirectTo, { replace: true });
                 }
 
-                // const userSaved = { name: loggedUser.displayName, email: loggedUser.email }
+                const userSaved = { name: loggedUser.displayName, email: loggedUser.email }
 
-                // fetch('https://assignment-12-sports-academies-server-site-t-0-n-m-0-y.vercel.app/users', {
-                //     method: 'POST',
-                //     headers: {
-                //         'content-type': 'application/json'
-                //     },
-                //     body: JSON.stringify(userSaved)
-                // })
-                //     .then(res => res.json())
-                //     .then(() => {
-                //     })
+                fetch('http://localhost:5000/users', {
+                    method: 'POST',
+                    headers: {
+                        'content-type': 'application/json'
+                    },
+                    body: JSON.stringify(userSaved)
+                })
+                    .then(res => res.json())
+                    .then(() => {
+                    })
             })
     }
 
@@ -65,7 +65,8 @@ const Social = () => {
                         </>
                         :
                         <>
-                            <div>
+                            <div className="flex items-center">
+                                <p className="mr-2">Login with : </p>
                                 <Link><button onClick={handleGoogleSignIn}><FaGoogle></FaGoogle></button></Link>
                                 <Link><button><FaTwitter className="mx-5"></FaTwitter></button></Link>
                                 <Link><button><FaFacebook></FaFacebook></button></Link>
