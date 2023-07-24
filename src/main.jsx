@@ -41,7 +41,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/collegeDetails/:id",
-        element: <CollegeDetails></CollegeDetails>,
+        element: <PrivateRoutes><CollegeDetails></CollegeDetails></PrivateRoutes>,
         loader: ({ params }) => fetch(`http://localhost:5000/colleges/${params.id}`)
       },
       {
@@ -59,8 +59,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/addreview/:id",
-        element: <Addreview></Addreview>,
-        loader: ({ params }) => fetch(`http://localhost:5000/colleges/${params.id}`)
+        element: <Addreview></Addreview>
       },
     ],
   },
@@ -82,6 +81,6 @@ ReactDOM.createRoot(document.getElementById('root')).render(
           <RouterProvider router={router} />
         </QueryClientProvider>
       </AuthProvider>
-    </React.StrictMode>,
+    </React.StrictMode>
   </div>
 )

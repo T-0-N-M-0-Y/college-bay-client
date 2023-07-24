@@ -1,12 +1,12 @@
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import { FaFacebook, FaGoogle, FaLinkedin, FaTwitter } from 'react-icons/fa';
+import { FaFacebook, FaGithub, FaGoogle, FaLinkedin, FaTwitter } from 'react-icons/fa';
 import { AuthContext } from "../../Provider/AuthProvider";
 import { useContext } from "react";
 import Swal from "sweetalert2";
 
 const Social = () => {
 
-    const { signInWithGoogle, user, logOut } = useContext(AuthContext);
+    const { signInWithGoogle, signInWithGithub, user, logOut } = useContext(AuthContext);
 
     const navigate = useNavigate();
     const location = useLocation();
@@ -14,6 +14,38 @@ const Social = () => {
 
     const handleGoogleSignIn = () => {
         signInWithGoogle()
+            .then(result => {
+                const loggedUser = result.user;
+                if (loggedUser) {
+                    Swal.fire({
+                        title: 'Login Success!! Enjoy Your Time',
+                        showClass: {
+                            popup: 'animate__animated animate__fadeInDown'
+                        },
+                        hideClass: {
+                            popup: 'animate__animated animate__fadeOutUp'
+                        }
+                    })
+                    navigate(redirectTo, { replace: true });
+                }
+
+                const userSaved = { name: loggedUser.displayName, email: loggedUser.email }
+
+                fetch('http://localhost:5000/users', {
+                    method: 'POST',
+                    headers: {
+                        'content-type': 'application/json'
+                    },
+                    body: JSON.stringify(userSaved)
+                })
+                    .then(res => res.json())
+                    .then(() => {
+                    })
+            })
+    }
+
+    const handleGithubSignIn= () => {
+        signInWithGithub()
             .then(result => {
                 const loggedUser = result.user;
                 if (loggedUser) {
@@ -68,7 +100,7 @@ const Social = () => {
                             <div className="flex items-center">
                                 <p className="mr-2">Login with : </p>
                                 <Link><button onClick={handleGoogleSignIn}><FaGoogle></FaGoogle></button></Link>
-                                <Link><button><FaTwitter className="mx-5"></FaTwitter></button></Link>
+                                <Link><button onClick={handleGithubSignIn}><FaGithub className="mx-2"></FaGithub></button></Link>
                                 <Link><button><FaFacebook></FaFacebook></button></Link>
                             </div>
                         </>
@@ -77,7 +109,7 @@ const Social = () => {
                     {
                         user ?
                             <>
-                                <Link><button className="bg-sky-800 hover:text-white text-white px-3 py-1" onClick={handleSignOut}>Logout</button></Link>
+                                <Link><button className="bg-sky-800 hover:text-white text-white px-3 py-1 " onClick={handleSignOut}>Logout</button></Link>
                             </>
                             :
                             <>
@@ -87,8 +119,9 @@ const Social = () => {
                     {
                         user ?
                             <>
-                                <div className="tooltip tooltip-bottom" data-tip="Edit Profile">
+                                <div className="flex items-center justify-center tooltip tooltip-bottom" data-tip="Edit Profile">
                                     <Link><button>{user.displayName}</button></Link>
+                                    <img src={user.photoURL} alt="" className="w-10 h-10 rounded-full" />
                                 </div>
                             </>
                             :

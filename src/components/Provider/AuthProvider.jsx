@@ -1,4 +1,4 @@
-import { GoogleAuthProvider, createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile } from "firebase/auth";
+import { GithubAuthProvider, GoogleAuthProvider, createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile } from "firebase/auth";
 import { createContext, useEffect, useState } from "react";
 import { app } from "../../Firebase/firebase.config";
 
@@ -12,6 +12,7 @@ const AuthProvider = ({ children }) => {
     const [loading, setLoading] = useState(true)
 
     const googleProvider = new GoogleAuthProvider();
+    const githubProvider = new GithubAuthProvider();
 
     const createUserForEmailPassLogin = (email, password) => {
         setLoading(true)
@@ -28,6 +29,11 @@ const AuthProvider = ({ children }) => {
         return signInWithPopup(auth, googleProvider)
     }
 
+    const signInWithGithub = () => {
+        setLoading(true)
+        return signInWithPopup(auth, githubProvider )
+    }
+
     const logOut = () => {
         setLoading(true);
         return signOut(auth)
@@ -35,7 +41,7 @@ const AuthProvider = ({ children }) => {
 
     const updateUserProfile = (name, photo) => {
         return updateProfile(auth.currentUser, {
-            displayName: name, 
+            displayName: name,
             photoURL: photo
         })
     }
@@ -44,17 +50,6 @@ const AuthProvider = ({ children }) => {
         const unsubscribe = onAuthStateChanged(auth, currentUser => {
             setUser(currentUser);
             setLoading(false);
-            // if (currentUser) {
-            //     axios.post('https://assignment-12-sports-academies-server-site-t-0-n-m-0-y.vercel.app/jwt', { email: currentUser.email })
-            //         .then(res => {
-            //             console.log(res.data.accessToken);
-            //             localStorage.setItem('access-token', res.data.accessToken)
-            //             setLoading(false);
-            //         })
-            // }
-            // else {
-            //     localStorage.removeItem('access-token')
-            // }
         })
         return () => {
             return unsubscribe();
@@ -67,6 +62,7 @@ const AuthProvider = ({ children }) => {
         createUserForEmailPassLogin,
         signInWithEmailPass,
         signInWithGoogle,
+        signInWithGithub,
         logOut,
         updateUserProfile
     }
