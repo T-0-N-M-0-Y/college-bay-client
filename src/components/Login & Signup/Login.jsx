@@ -5,6 +5,7 @@ import { useForm } from 'react-hook-form';
 import { FaEye } from 'react-icons/fa';
 import { motion } from "framer-motion"
 import { AuthContext } from '../Provider/AuthProvider';
+import GoGiFa from './GoGiFa';
 
 const Login = () => {
 
@@ -73,6 +74,7 @@ const Login = () => {
                 <div className='mx-10'>
                     <Link to={'/signup'}><p className='text-orange-800'>New here?? Create an Account</p></Link>
                 </div>
+                <GoGiFa></GoGiFa>
             </div>
         </div>
     );

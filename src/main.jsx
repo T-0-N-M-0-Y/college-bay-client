@@ -16,6 +16,10 @@ import {
   QueryClientProvider,
 } from '@tanstack/react-query'
 import CollegeDetails from './components/Home/LoadColleges/CollegeDetails.jsx';
+import AllColleges from './components/Home/LoadColleges/AllColleges.jsx';
+import Admission from './components/Routes/Admission.jsx';
+import Apply from './components/Routes/Apply.jsx';
+import PrivateRoutes from './components/Routes/PrivateRoutes.jsx';
 
 const queryClient = new QueryClient()
 
@@ -30,8 +34,21 @@ const router = createBrowserRouter([
         element: <Home></Home>,
       },
       {
+        path: "/colleges",
+        element: <AllColleges></AllColleges>,
+      },
+      {
         path: "/collegeDetails/:id",
         element: <CollegeDetails></CollegeDetails>,
+        loader: ({ params }) => fetch(`http://localhost:5000/colleges/${params.id}`)
+      },
+      {
+        path: "/admission",
+        element: <PrivateRoutes><Admission></Admission></PrivateRoutes>,
+      },
+      {
+        path: "/apply/:id",
+        element: <Apply></Apply>,
         loader: ({ params }) => fetch(`http://localhost:5000/colleges/${params.id}`)
       },
     ],

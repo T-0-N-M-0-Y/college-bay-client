@@ -22,10 +22,10 @@ const Navbar = () => {
                 </div>
                 <div className="navbar-end hidden lg:flex items-center">
                     <ul className="menu menu-horizontal font-bold">
-                        <Link><li className="text-sky-950 hover:underline hover:text-orange-500 mr-2">HOME</li></Link>
-                        <Link><li className="text-sky-950 hover:underline hover:text-orange-500 mr-2">COLLEGES</li></Link>
-                        <Link><li className="text-sky-950 hover:underline hover:text-orange-500 mr-2">ADMISSION</li></Link>
-                        <Link><li className="text-sky-950 hover:underline hover:text-orange-500">MY COLLEGE</li></Link>
+                        <Link to={'/'}><li className="text-sky-950 hover:underline hover:text-orange-500 mr-2">HOME</li></Link>
+                        <Link to={'/colleges'}><li className="text-sky-950 hover:underline hover:text-orange-500 mr-2">COLLEGES</li></Link>
+                        <Link to={'/admission'}><li className="text-sky-950 hover:underline hover:text-orange-500 mr-2">ADMISSION</li></Link>
+                        <Link to={'/mycollege'}><li className="text-sky-950 hover:underline hover:text-orange-500">MY COLLEGE</li></Link>
                     </ul>
                 </div>
             </div>

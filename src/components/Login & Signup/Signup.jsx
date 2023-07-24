@@ -2,7 +2,8 @@ import { useForm } from "react-hook-form";
 import { motion } from "framer-motion"
 import { useContext } from "react";
 import { AuthContext } from "../Provider/AuthProvider";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import GoGiFa from "./GoGiFa";
 
 const Signup = () => {
 
@@ -92,9 +93,7 @@ const Signup = () => {
                         </motion.div>
                     </div>
                 </form>
-                <div className='mx-10'>
-                    <Link to={'/login'}><p className='text-orange-800'>Already have an Account?? Login here</p></Link>
-                </div>
+                <GoGiFa></GoGiFa>
             </div>
         </div>
     );
