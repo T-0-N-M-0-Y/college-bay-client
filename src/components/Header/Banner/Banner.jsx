@@ -48,7 +48,7 @@ const Banner = () => {
                     </div>
                 </div>
                 <div id="slide4" className="carousel-item relative w-full">
-                    <img src="https://businessdaily24.com/wp-content/uploads/2018/02/Top-10-Universities-in-Bangladesh-University-of-Dhaka.jpg" className="w-full" />
+                    <img src="https://rn53themes.net/themes/demo/education-master/images/slider/1.jpg" className="w-full" />
                     <div className="absolute flex justify-between items-center transform -translate-y-1/2 left-5 right-5 top-1/2">
                         <a href="#slide3" className="btn btn-circle hover:bg-orange-800 bg-orange-500 hover:text-white border-none w-4 h-4">❮</a>
                         <p className="md:text-5xl text-xs md:font-bold text-white p-2 md:p-5 uppercase text-center">Select your Best College <br />

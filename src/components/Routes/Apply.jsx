@@ -2,25 +2,66 @@ import { useContext } from "react";
 import { useForm } from "react-hook-form";
 import { AuthContext } from "../Provider/AuthProvider";
 import { useLoaderData } from "react-router-dom";
-// import Swal from "sweetalert2";
+import Swal from "sweetalert2";
 
 
-// const image_API_key = import.meta.env.VITE_IMAGE_API_KEY;
+const image_API_key = import.meta.env.VITE_IMAGE_API_KEY;
 
 const Apply = () => {
 
-    const { register, handleSubmit } = useForm();
+    const { register, handleSubmit, reset } = useForm();
     const { user } = useContext(AuthContext);
     const college = useLoaderData();
-    const {college_name} = college;
+    const { college_name } = college;
 
     const onSubmit = data => {
-        console.log(data);
+
+        const formData = new FormData();
+        formData.append('image', data.image[0])
+
+        const image_BB_url = `https://api.imgbb.com/1/upload?key=${image_API_key}`
+
+        fetch(image_BB_url, {
+            method: 'POST',
+            body: formData
+        })
+            .then(res => res.json())
+            .then(image => {
+                const imgURL = image.data.display_url;
+                const { name, college, subject, phone, address, email, birth } = data;
+                const appliedCollege = { name, college, subject, phone, address, email, birth, image: imgURL }
+                console.log(appliedCollege);
+
+                fetch('http://localhost:5000/appliedColleges', {
+                    method: 'POST',
+                    headers: {
+                        'content-type': 'application/json'
+                    },
+                    body: JSON.stringify(appliedCollege)
+                })
+                    .then(res => res.json())
+                    .then(data => {
+                        console.log(data);
+                        if (data.insertedId) {
+                            reset();
+                            Swal.fire({
+                                title: 'Applied Successfully',
+                                showClass: {
+                                    popup: 'animate__animated animate__fadeInDown'
+                                },
+                                hideClass: {
+                                    popup: 'animate__animated animate__fadeOutUp'
+                                }
+                            })
+                        }
+                    })
+            })
+        console.log(data)
     };
 
     return (
         <div className="my-20">
-            <form onSubmit={handleSubmit(onSubmit)} className="ml-10">
+            <form onSubmit={handleSubmit(onSubmit)} className="md:mx-20 mx-5">
                 <div className="form-control w-full">
                     <label className="label">
                         <span className="label-text font-semibold">College Name</span>

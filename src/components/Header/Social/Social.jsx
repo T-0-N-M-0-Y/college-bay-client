@@ -52,12 +52,12 @@ const Social = () => {
 
     return (
         <div>
-            <div className="flex justify-between items-center bg-sky-950 text-white md:px-20">
+            <div className="md:flex justify-between items-center text-center bg-sky-950 text-white md:px-20">
                 {
                     user ?
                         <>
-                            <div className="flex items-center">
-                                <p className="mr-2">Follow Us on : </p>
+                            <div className="flex items-center justify-center">
+                                <p className="mr-2">Follow Us : </p>
                                 <a href=""><FaFacebook></FaFacebook></a>
                                 <a href=""><FaTwitter className="mx-3"></FaTwitter></a>
                                 <a href=""><FaLinkedin></FaLinkedin></a>
@@ -87,8 +87,8 @@ const Social = () => {
                     {
                         user ?
                             <>
-                                <div className="tooltip tooltip-bottom" data-tip={user.displayName}>
-                                    <img className="w-8 h-8 lg:h-10 lg:w-10 rounded-full" src={user.photoURL} referrerPolicy="no-referrer" />
+                                <div className="tooltip tooltip-bottom" data-tip="Edit Profile">
+                                    <Link><button>{user.displayName}</button></Link>
                                 </div>
                             </>
                             :

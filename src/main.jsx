@@ -20,6 +20,8 @@ import AllColleges from './components/Home/LoadColleges/AllColleges.jsx';
 import Admission from './components/Routes/Admission.jsx';
 import Apply from './components/Routes/Apply.jsx';
 import PrivateRoutes from './components/Routes/PrivateRoutes.jsx';
+import MyCollege from './components/Routes/MyCollege.jsx';
+import Addreview from './components/Routes/Addreview.jsx';
 
 const queryClient = new QueryClient()
 
@@ -47,8 +49,17 @@ const router = createBrowserRouter([
         element: <PrivateRoutes><Admission></Admission></PrivateRoutes>,
       },
       {
+        path: "/mycollege",
+        element: <PrivateRoutes><MyCollege></MyCollege></PrivateRoutes>,
+      },
+      {
         path: "/apply/:id",
         element: <Apply></Apply>,
+        loader: ({ params }) => fetch(`http://localhost:5000/colleges/${params.id}`)
+      },
+      {
+        path: "/addreview/:id",
+        element: <Addreview></Addreview>,
         loader: ({ params }) => fetch(`http://localhost:5000/colleges/${params.id}`)
       },
     ],
