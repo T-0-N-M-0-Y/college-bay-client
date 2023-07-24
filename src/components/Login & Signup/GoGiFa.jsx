@@ -79,8 +79,8 @@ const GoGiFa = () => {
             <h1 className="my-3 text-start">Or Login With</h1>
             <div className="flex justify-end">
                 <Link onClick={handleGoogleSignIn}><FaGoogle className="text-xl"></FaGoogle></Link>
-                <Link><button onClick={handleGithubSignIn}><FaGithub className="text-xl"></FaGithub></button></Link>
-                <Link><FaFacebook className="mx-5 text-xl"></FaFacebook></Link>
+                <Link><button onClick={handleGithubSignIn}><FaGithub className="text-xl mx-2"></FaGithub></button></Link>
+                <Link><FaFacebook className="text-xl mr-2"></FaFacebook></Link>
                 <Link><FaTwitter className='text-xl'></FaTwitter></Link>
             </div>
         </div>

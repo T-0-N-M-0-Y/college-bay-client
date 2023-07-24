@@ -109,7 +109,7 @@ const Social = () => {
                     {
                         user ?
                             <>
-                                <Link><button className="bg-sky-800 hover:text-white text-white px-3 py-1 hidden" onClick={handleSignOut}>Logout</button></Link>
+                                <Link><button className="bg-sky-800 hover:text-white text-white px-3 py-1" onClick={handleSignOut}>Logout</button></Link>
                             </>
                             :
                             <>
