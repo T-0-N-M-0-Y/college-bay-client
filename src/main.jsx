@@ -22,6 +22,7 @@ import Apply from './components/Routes/Apply.jsx';
 import PrivateRoutes from './components/Routes/PrivateRoutes.jsx';
 import MyCollege from './components/Routes/MyCollege.jsx';
 import Addreview from './components/Routes/Addreview.jsx';
+import ErrorPage from './components/Error/ErrorPage.jsx';
 
 const queryClient = new QueryClient()
 
@@ -29,7 +30,7 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <App />,
-    // errorElement: <ErrorPage />,
+    errorElement: <ErrorPage />,
     children: [
       {
         path: "/",
