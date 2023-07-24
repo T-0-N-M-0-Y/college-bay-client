@@ -61,7 +61,7 @@ const GoGiFa = () => {
 
                 const userSaved = { name: loggedUser.displayName, email: loggedUser.email }
 
-                fetch('http://localhost:5000/users', {
+                fetch('https://college-bay-server-t-0-n-m-0-y.vercel.app/users', {
                     method: 'POST',
                     headers: {
                         'content-type': 'application/json'
@@ -79,7 +79,7 @@ const GoGiFa = () => {
             <h1 className="my-3 text-start">Or Login With</h1>
             <div className="flex justify-end">
                 <Link onClick={handleGoogleSignIn}><FaGoogle className="text-xl"></FaGoogle></Link>
-                <Link><button onClick={handleGithubSignIn}><FaGithub className="mx-2"></FaGithub></button></Link>
+                <Link><button onClick={handleGithubSignIn}><FaGithub className="text-xl"></FaGithub></button></Link>
                 <Link><FaFacebook className="mx-5 text-xl"></FaFacebook></Link>
                 <Link><FaTwitter className='text-xl'></FaTwitter></Link>
             </div>

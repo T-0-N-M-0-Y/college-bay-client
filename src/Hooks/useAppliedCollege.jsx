@@ -9,7 +9,7 @@ const useAppliedCollege = () => {
     const { data: appliedColleges = [], refetch } = useQuery({
         queryKey: ['appliedColleges'],
         queryFn: async () => {
-            const res = await fetch(`http://localhost:5000/appliedColleges/email?email=${user.email}`)
+            const res = await fetch(`https://college-bay-server-t-0-n-m-0-y.vercel.app/appliedColleges/email?email=${user.email}`)
             return res.json();
         },
     })

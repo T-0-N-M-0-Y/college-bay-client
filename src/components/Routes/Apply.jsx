@@ -32,7 +32,7 @@ const Apply = () => {
                 const appliedCollege = { name, college, subject, phone, address, email, birth, image: imgURL }
                 console.log(appliedCollege);
 
-                fetch('http://localhost:5000/appliedColleges', {
+                fetch('https://college-bay-server-t-0-n-m-0-y.vercel.app/appliedColleges', {
                     method: 'POST',
                     headers: {
                         'content-type': 'application/json'

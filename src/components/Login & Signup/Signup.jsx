@@ -26,7 +26,7 @@ const Signup = () => {
 
                         const userSaved = { name: data.name, email: data.email }
 
-                        fetch('http://localhost:5000/users', {
+                        fetch('https://college-bay-server-t-0-n-m-0-y.vercel.app/users', {
                             method: 'POST',
                             headers: {
                                 'content-type': 'application/json'

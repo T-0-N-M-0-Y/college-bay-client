@@ -10,7 +10,7 @@ const Addreview = () => {
 
         const addedreview = { username: data.username, rating: data.rating, review_text: data.review_text }
 
-        fetch('http://localhost:5000/reviews', {
+        fetch('https://college-bay-server-t-0-n-m-0-y.vercel.app/reviews', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
